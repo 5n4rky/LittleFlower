@@ -1,0 +1,5 @@
+0. get the frontend ready
+1. login authentication session management
+3. make a model and repo for students
+5. all staff and student should inherit from some global entity
+6. audit stuff
