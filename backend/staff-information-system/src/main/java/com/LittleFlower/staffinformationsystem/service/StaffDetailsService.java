@@ -2,10 +2,11 @@ package com.LittleFlower.staffinformationsystem.service;
 
 import java.util.List;
 
-import org.hibernate.metamodel.mapping.internal.InFlightEntityMappingType;
+import org.springframework.stereotype.Service;
 
 import com.LittleFlower.staffinformationsystem.model.StaffDetailsEntity;
 
+@Service
 public interface StaffDetailsService {
 	
   StaffDetailsEntity saveStaffDetails( StaffDetailsEntity staffDetail);
