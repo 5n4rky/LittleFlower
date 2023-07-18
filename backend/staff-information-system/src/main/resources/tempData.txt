@@ -1,0 +1,7 @@
+{
+    "staffName": "chintu",
+    "primaryContactNumber": 9876543210,
+    "secondaryContactNumber": 1234567890,
+    "emailIdentifier": "chintu.chutki@example.com",
+    "whatsappNumber": 987654321
+}

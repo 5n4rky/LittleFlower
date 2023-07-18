@@ -1,0 +1,43 @@
+
+<div class="student-list-container container">
+  <h2 style="margin-bottom:3%;">Student List</h2>
+  <div class="input-group mb-3" style="width:80vw;">
+    <input type="text" class="form-control"  placeholder="Search" [(ngModel)]="searchTerm" (ngModelChange)="searchQuery()">
+  </div>
+  <div class="button-container d-flex justify-content-between mb-3" style="width: 40vw;">
+    <button class="btn btn-success flex-fill " style="margin-right: 2vw;">All</button>
+    <button class="btn btn-success flex-fill " style="margin-right: 2vw;">Staff</button>
+    <button class="btn btn-success flex-fill ">Students</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th> First Name</th>
+        <th> Last Name</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of documents1">
+        <td>{{ student.staffIdentifier}}</td>
+        <td>{{ student.firstName }}</td>
+        <td>{{ student.lastName }}</td>
+        <td>{{ student.role}}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="viewStaff(student)">View</button>
+        </td>
+      </tr>
+      <tr *ngFor="let student of documents2">
+        <td>{{ student.studentIdentifier}}</td>
+        <td>{{ student.firstName }}</td>
+        <td>{{ student.lastName }}</td>
+        <td>{{ student.role}}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="viewstudent(student)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

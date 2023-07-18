@@ -1,0 +1,39 @@
+
+<form (ngSubmit)="submitForm()">
+  <div class="edit-student-container container" *ngIf="documents != null">
+  <h5 style="margin-left: 10vw;">View Student Details</h5>
+  <div >
+    <div class="form-group" style="height: 8%;">
+      <label for="studentId"> ID</label>
+      <input  *ngIf="documents.role==='STAFF'" type="number" class="form-control" id="studentId"  value="{{documents.staffIdentifier}}" disabled>      
+      <input  *ngIf="documents.role ==='ADMIN'" type="number" class="form-control" id="studentId"  value="{{documents.staffIdentifier}}" disabled>      
+      <input  *ngIf="documents.role==='student'" type="number" class="form-control" id="studentId"  value="{{documents.studentIdentifier}}" disabled>      
+    </div>
+      <div class="form-group" style="height: 8%;">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="firstName" value="{{documents.firstName}}">
+    </div>
+    <div class="form-group" style="height: 8%;">
+      <label for="last_name">Last Name</label>
+      <input type="text" class="form-control" id="lastName" value="{{documents.lastName}}">
+    </div>
+    <div class="form-group" style="height: 8%;">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" value="{{documents.emailIdentifier}}">
+    </div>
+    <div *ngIf="documents.role==='student'" class="form-group" style="height: 8%;">
+      <label for="class">class</label>
+      <input   type="text" class="form-control" id="class" value="{{documents.grade}}">
+    </div>
+    <div *ngIf="documents.role==='STAFF' || documents.role==='ADMIN' "class="form-group" style="height: 8%;">
+      <label  for="classOwned">classOwned</label>
+      <input  type="text" class="form-control" id="classOwned" value="{{documents.classOwned}}">
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+  </div>
+</div>
+</form>
+
+
+
+
