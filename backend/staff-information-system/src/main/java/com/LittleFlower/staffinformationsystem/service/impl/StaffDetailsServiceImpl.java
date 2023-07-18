@@ -23,7 +23,7 @@ public class StaffDetailsServiceImpl implements StaffDetailsService {
 	}
 	
 	@Override
-	public List<StaffDetailsEntity> fetchStaffDetailsLlist(){
+	public List<StaffDetailsEntity> fetchStaffDetails(){
 		return (List<StaffDetailsEntity>)staffDetailsEntityRepository.findAll();
 	}
 	

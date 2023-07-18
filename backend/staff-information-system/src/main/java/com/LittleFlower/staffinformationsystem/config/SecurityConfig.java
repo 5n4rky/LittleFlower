@@ -42,24 +42,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
        
-    	 // Enable CORS and disable CSRF
-     //   http = http.cors().and().csrf().disable();
-        
-		/*
-		 * // Set session management to stateless http = http .sessionManagement()
-		 * .sessionCreationPolicy(SessionCreationPolicy.STATELESS) .and();
-		 * 
-		 * // Set unauthorized requests exception handler http = http
-		 * .exceptionHandling() .authenticationEntryPoint( (request, response, ex) -> {
-		 * response.sendError( HttpServletResponse.SC_UNAUTHORIZED, ex.getMessage() ); }
-		 * ) .and();
-		 */
-        // Set permissions on endpoints
-        http.csrf().disable().authorizeRequests()
+    
+    	 http.cors().and().csrf().disable().authorizeRequests()
             // Our public endpoints
             .antMatchers("/login").permitAll()
             .antMatchers("/api/logout").permitAll()
             .anyRequest().authenticated()
+            //.anyRequest().permitAll()
             .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtTokenFilter,UsernamePasswordAuthenticationFilter.class);
         

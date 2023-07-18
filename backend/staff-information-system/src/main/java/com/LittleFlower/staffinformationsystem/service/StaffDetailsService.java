@@ -10,11 +10,9 @@ import com.LittleFlower.staffinformationsystem.model.StaffDetailsEntity;
 public interface StaffDetailsService {
 	
   StaffDetailsEntity saveStaffDetails( StaffDetailsEntity staffDetail);
-  
-  List<StaffDetailsEntity> fetchStaffDetailsLlist();
+  List<StaffDetailsEntity> fetchStaffDetails();
   StaffDetailsEntity fetchStaffDetailsByID(long ID);
   List<StaffDetailsEntity>fetctchStaffDetailsBySearch(String search);
-  
   void deleteStaffDetail(long id);
    long getMaxId();
   

@@ -1,0 +1,18 @@
+.front-page-container {
+    padding-top: 100px; /* Add top padding */
+  }
+  
+  .card {
+    width: 90%; /* Adjust the card width as needed */
+    max-width: 400px; /* Set a maximum width for larger screens */
+    margin: auto; /* Center the card horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box-shadow to create a card effect */
+  }
+  
+  @media screen and (max-width: 576px) {
+    /* Apply specific styles for smaller devices */
+    .front-page-container {
+      padding-top: 50px;
+    }
+  }
+  

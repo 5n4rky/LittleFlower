@@ -15,7 +15,7 @@ public interface StaffDetailsEntityRepository extends CrudRepository<StaffDetail
 	
 	 @Query("SELECT  MAX(staffIdentifier) FROM StaffDetailsEntity s") 
 	 int findMaxId();
-	 @Query("SELECT s FROM StaffDetailsEntity s where s.staffName LIKE :search% OR s.emailIdentifier LIKE :search% or s.staffIdentifier LIKE :search% ") 
+	 @Query("SELECT s FROM StaffDetailsEntity s where s.firstName LIKE :search% OR s.lastName LIKE :search% OR s.emailIdentifier LIKE :search% or s.staffIdentifier LIKE :search% ") 
 	 List<StaffDetailsEntity> findBySearchParam(@Param("search") String search);
 	 
 	 
